@@ -42,6 +42,9 @@ export async function fetchLatestInvoices() {
       amount: formatCurrency(invoice.amount),
     }));
     return latestInvoices;
+    
+    console.log(latestInvoices); // Invoice is an empty array []
+    return latestInvoices[0];
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch the latest invoices.');
